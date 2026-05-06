@@ -1,0 +1,40 @@
+name: Angular_DockerImage_Render
+
+on:
+  push:
+    branches: [ master ] # Se activa cuando subes algo a master
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Construir el proyecto (Build)
+        # Usamos el comando que nos funcionó antes para evitar errores MIME
+        run: npx ng build --configuration production --output-path=docs --base-href ./ --output-hashing none
+
+      - name: Login en Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Construir y subir imagen a Docker Hub
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          # Se guarda con el nombre de usuario y el ID único del commit para Render
+          tags: |
+            ${{ secrets.DOCKER_USER }}/mycv:latest
+            ${{ secrets.DOCKER_USER }}/mycv:${{ github.sha }}
