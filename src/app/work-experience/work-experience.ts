@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { WorkExperienceService } from '../services/work-experience-service/work-experience';
 
 @Component({
   selector: 'app-work-experience',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './work-experience.html',
-  styleUrl: './work-experience.scss',
+  styleUrls: ['./work-experience.scss']
 })
-export class WorkExperience {
-
+export class WorkExperienceComponent {
+  workService = inject(WorkExperienceService);
+  // AGREGAMOS ESTA LÍNEA:
+  work$ = this.workService.obtenerWork();
 }

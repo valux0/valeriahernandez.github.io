@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { EducationService } from '../services/education-service/education';
 
 @Component({
   selector: 'app-education',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './education.html',
-  styleUrl: './education.scss',
+  styleUrls: ['./education.scss']
 })
-export class Education {
-
+export class EducationComponent {
+  educationService = inject(EducationService);
+  // AGREGAMOS ESTA LÍNEA:
+  educacion$ = this.educationService.obtenerEducacion();
 }

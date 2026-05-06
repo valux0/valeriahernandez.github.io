@@ -1,0 +1,30 @@
+.skills-container {
+  margin-top: 20px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+
+  .skill-info {
+    flex: 1;
+    text-align: right;
+    span { font-size: 0.8rem; font-weight: bold; color: #444; }
+  }
+
+  .skill-bar-bg {
+    flex: 2;
+    height: 12px;
+    background: #eee; // Gris clarito de fondo
+    border-radius: 2px;
+    overflow: hidden;
+
+    .skill-progress {
+      height: 100%;
+      background: #E62E2D; // EL ROJO DE MUSK
+      transition: width 1s ease-in-out;
+    }
+  }
+}

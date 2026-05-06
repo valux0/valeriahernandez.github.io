@@ -1,1 +1,8 @@
-<p>interests works!</p>
+<section class="interests-section">
+  <h2>Interests</h2>
+  <div class="interests-tags">
+    <span class="tag" *ngFor="let i of intereses$ | async">
+      {{ i.interests }}
+    </span>
+  </div>
+</section>

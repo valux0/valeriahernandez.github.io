@@ -1,0 +1,28 @@
+@if (datos$ | async; as listaDatos) {
+  @if (listaDatos.length > 0) {
+    @for (h of listaDatos; track h) {
+      <header class="header-container">
+        <div class="header-left">
+          <h1>{{ h.name }}</h1>
+          <p class="goal-life">{{ h.goalLife }}</p>
+        </div>
+        
+        <div class="header-center">
+          <!-- Si la foto no carga, saldrá el recuadro gris por el CSS -->
+          <img [src]="h.photoUrl" alt="Foto de perfil" class="profile-photo">
+        </div>
+
+        <div class="header-right">
+          <p>📧 {{ h.email }}</p>
+          <p>📞 {{ h.phoneNumber }}</p>
+          <p>📍 {{ h.location }}</p>
+          <p>🔗 {{ h.socialNetwork }}</p>
+        </div>
+      </header>
+    }
+  } @else {
+    <p style="color: red; text-align: center;">La colección 'header' está vacía en Firebase</p>
+  }
+} @else {
+  <p style="text-align: center;">Conectando con el Header...</p>
+}

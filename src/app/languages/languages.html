@@ -1,1 +1,9 @@
-<p>languages works!</p>
+<section class="languages-section">
+  <h2>Languages</h2>
+  <div class="lang-grid">
+    <div class="lang-item" *ngFor="let l of idiomas$ | async">
+      <strong>{{ l.language }}</strong>
+      <span class="lang-level">({{ l.nivel }})</span>
+    </div>
+  </div>
+</section>

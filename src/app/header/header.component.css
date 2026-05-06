@@ -1,0 +1,41 @@
+:host {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #333;
+    padding: 20px 0;
+    min-height: 150px; 
+    width: 100%;
+
+    .header-left {
+        flex: 2;
+        h1 { font-size: 3rem; margin: 0; font-weight: bold; line-height: 1; }
+        .goal-life { font-size: 1.1rem; color: #555; margin-top: 10px; }
+    }
+
+    .header-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        .profile-photo {
+            width: 150px !important;
+            height: 150px !important;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #E62E2D;
+            background-color: #eee; 
+    }
+
+    .header-right {
+        flex: 1;
+        text-align: right;
+        font-size: 0.9rem;
+        p { margin: 5px 0; font-weight: bold; }
+    }}
+  }   

@@ -1,0 +1,27 @@
+// Importante para que el componente no se colapse
+:host {
+    display: block;
+}
+
+.cv-page {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+// AQUÍ SE CREAN LAS COLUMNAS
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; // Columna izquierda 60%, derecha 40%
+    gap: 50px; // Espacio entre las dos columnas
+    margin-top: 30px;
+}
+
+// Forzamos a que todos tus componentes ocupen su espacio
+app-header, app-work-experience, app-education, 
+app-skills, app-certificates, app-languages, app-interests {
+    display: block;
+    width: 100%;
+}

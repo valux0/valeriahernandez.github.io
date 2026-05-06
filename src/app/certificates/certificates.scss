@@ -1,0 +1,8 @@
+.cert-list {
+    list-style: none;
+    li {
+        margin-bottom: 15px;
+        .cert-title { font-size: 0.95rem; margin-bottom: 3px; }
+        .cert-desc { font-size: 0.85rem; color: #666; }
+    }
+}

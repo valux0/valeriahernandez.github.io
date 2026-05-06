@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LanguagesService } from '../services/languages-service/languages';
 @Component({
   selector: 'app-languages',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './languages.html',
-  styleUrl: './languages.scss',
+  styleUrls: ['./languages.scss']
 })
-export class Languages {
-
+export class LanguagesComponent {
+  languagesService = inject(LanguagesService);
+  // AGREGAMOS ESTA LÍNEA:
+  idiomas$ = this.languagesService.obtenerIdiomas ();
 }
+

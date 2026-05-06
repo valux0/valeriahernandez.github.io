@@ -1,1 +1,11 @@
-<p>certificates works!</p>
+<section class="certificates-section">
+  <h2>Achievements & Certificates</h2>
+  <ul class="cert-list">
+    <li *ngFor="let cert of certificados$ | async">
+      <div class="cert-title">
+        <strong>{{ cert.title }}</strong> ({{ cert.year }})
+      </div>
+      <p class="cert-desc">{{ cert.description }}</p>
+    </li>
+  </ul>
+</section>

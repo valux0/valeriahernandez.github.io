@@ -1,0 +1,23 @@
+.timeline {
+    border-left: 1px solid #ddd;
+    margin-left: 10px;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+
+    .red-marker {
+        position: absolute;
+        left: -41px;
+        top: 0;
+        width: 22px;
+        height: 22px;
+        background-color: #E62E2D;
+    }
+
+    .dates { color: #E62E2D; font-size: 0.75rem; font-weight: 700; }
+    h3 { margin: 5px 0; font-size: 1rem; }
+    .institution { font-size: 0.9rem; color: #666; }
+}

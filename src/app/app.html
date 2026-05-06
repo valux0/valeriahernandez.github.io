@@ -1,39 +1,23 @@
-<table border="1">
+<div class="cv-page">
+  <!-- El Header va arriba del todo -->
+  <app-header></app-header>
 
-<tr>
-    <th colspan="2">
-        <app-header></app-header>
-    </th>
-</tr>
+  <!-- Este DIV es el que crea las dos columnas -->
+  <div class="cv-grid">
+    
+    <!-- Columna IZQUIERDA (Más ancha) -->
+    <div class="column-left">
+      <app-work-experience></app-work-experience>
+      <app-education></app-education>
+    </div>
 
-<tr>
-    <td>
-        <app-work-experience></app-work-experience>
-    </td>
-    <td>
-        <app-skills></app-skills>
-    </td>
-</tr>
+    <!-- Columna DERECHA (Más delgada) -->
+    <div class="column-right">
+      <app-skills></app-skills>
+      <app-certificates></app-certificates>
+      <app-languages></app-languages>
+      <app-interests></app-interests>
+    </div>
 
-<tr>
-    <td>
-        <app-education></app-education>
-    </td>
-    <td>
-        <app-certificates></app-certificates>
-    </td>
-</tr>
-
-<tr>
-    <td>
-        <app-languages></app-languages>
-    </td>
-</tr>
-
-<tr>
-    <td>
-        <app-interests></app-interests>
-    </td>
-</tr>
-
-</table>
+  </div>
+</div>

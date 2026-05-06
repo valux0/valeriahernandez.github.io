@@ -1,1 +1,15 @@
-<p>work-experience works!</p>
+<section class="work-section">
+  <h2>Work Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item" *ngFor="let job of work$ | async">
+      <div class="red-marker"></div>
+      <div class="work-content">
+        <span class="dates">{{ job.startDate }} - {{ job.endDate }}</span>
+        <span class="work-location">{{ job.location }}</span>
+        <h3>{{ job.position }}</h3>
+        <h4 class="company-name">{{ job.company }}</h4>
+        <p class="accomplishments">{{ job.accomplishments }}</p>
+      </div>
+    </div>
+  </div>
+</section>

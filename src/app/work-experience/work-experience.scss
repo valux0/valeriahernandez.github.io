@@ -1,0 +1,35 @@
+.timeline {
+    border-left: 1px solid #ddd;
+    margin-left: 10px;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+
+    .red-marker {
+        position: absolute;
+        left: -41px;
+        top: 0;
+        width: 22px;
+        height: 22px;
+        background-color: #E62E2D; // Rojo Elon Musk
+    }
+
+    .dates {
+        color: #E62E2D;
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    .work-location {
+        float: right;
+        font-size: 0.75rem;
+        color: #999;
+    }
+
+    h3 { margin: 5px 0; font-size: 1.1rem; text-transform: uppercase; }
+    .company-name { color: #444; font-size: 0.95rem; margin-bottom: 10px; }
+    .accomplishments { font-size: 0.85rem; color: #555; line-height: 1.4; }
+}

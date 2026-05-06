@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { InterestsService } from '../services/interests-service/interests';
 @Component({
   selector: 'app-interests',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './interests.html',
-  styleUrl: './interests.scss',
+  styleUrls: ['./interests.scss']
 })
-export class Interests {
-
+export class InterestsComponent {
+  interestsService = inject(InterestsService);
+  // AGREGAMOS ESTA LÍNEA:
+  intereses$ = this.interestsService.obtenerIntereses();
 }
